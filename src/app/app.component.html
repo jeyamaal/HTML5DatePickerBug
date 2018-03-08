@@ -1,0 +1,35 @@
+
+<form (ngSubmit)="onSubmit()" [formGroup]="personalForm">
+
+  <!-- Civil Status-->
+  <div class="form-group">
+    <label for="exampleInputEmail1">Civil Status</label>
+    &nbsp; &nbsp; &nbsp;
+    <input type="radio" name="radioCiviStatus" value="Single" formControlName="radioCiviStatus" checked (click)="setradio('Single')"> Single &nbsp;
+    <input type="radio" name="radioCiviStatus" value="Married" formControlName="radioCiviStatus" (click)="setradio('Married')"> Married &nbsp;
+    <input type="radio" name="radioCiviStatus" value="Divorced" formControlName="radioCiviStatus" (click)="setradio('Divorced')"> Divorced
+    <input type="radio" name="radioCiviStatus" value="Widowed" formControlName="radioCiviStatus" (click)="setradio('Widowed')"> Widowed
+  </div>
+
+  <div class="form-group" id="spouseDetail" *ngIf="isSelected('Married')">
+    <div class="form-group col-xs-3">
+      <input type="text" class="form-control" id="spouseName" formControlName="spouseName" placeholder="Spouse Name" />
+      <br>
+    </div>
+    <div class="form-group col-xs-5">
+      <input type="text" class="form-control" id="spouseOccupation" formControlName="spouseOccupation" placeholder="Spouse Occupation / Designation"
+      />
+      <br>
+    </div>
+    <div class="form-group col-xs-4">
+      <input type="text" class="form-control" id="spouseContact" formControlName="spouseContact" placeholder="Spouse Contact No"
+      />
+      <br>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-9 col-sm-3">
+      <button type="submit" class="btn btn-success" [disabled]="!personalForm.valid">Save and Continue</button>
+    </div>
+  </div>
+</form>
