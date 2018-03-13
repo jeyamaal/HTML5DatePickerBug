@@ -20,7 +20,7 @@
       "prefix": "app",
       "styles": [
         "styles.css" ],
-      "scripts": [
+      "scripts": [ "../node_modules/jquery/dist/jquery.min.js"
     
       ],
       "environmentSource": "environments/environment.ts",
